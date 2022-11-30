@@ -237,13 +237,31 @@
                     <div class="container mt-3">
                         <table class="table table-responsive">
                             <thead>
-                                <th>UID</th>
-                                <th>Email</th>
-                                <th>Last Name</th>
-                                <th>First Name</th>
-                                <th>Middle Initial</th>
-                                <th>Number</th>
-                                <th>Password</th>
+                                <th>Homestay ID</th>
+                                <th>Official Email Address</th>
+                                <th>TIN</th>
+                                <th>Homestay Name</th>
+                                <th>Host's Name</th>
+                                <th>Address</th>
+                                <th>Website</th>
+                                <th>Contact Number</th>
+                                <th>Email Address</th>
+                                <th>Date Established</th>
+                                <th>Type of Organization</th>
+                                <th>Permit</th>
+                                <th>Permit Number</th>
+                                <th>Total Number of Lettable Room</th>
+                                <th>Name of Homestay Association</th>
+                                <th>Training Programs Title 1</th>
+                                <th>Inclusive Date 1</th>
+                                <th>Sponsore 1</th>
+                                <th>Number of Hours 1</th>
+                                <th>Training Programs Title 2</th>
+                                <th>Inclusive Date 2</th>
+                                <th>Sponsore 2</th>
+                                <th>Number of Hours 2</th>
+                                
+                                
                             </thead>
                             <tbody id="tbody1">
 
@@ -308,7 +326,16 @@
     <script src="assets/js/calendar/demo.js"></script>
     <!--Nice select-->
     <script src="assets/js/jquery.nice-select.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script>
+        function printTable(){
+            const element = document.getElementById('table');
+            html2pdf()
+            .from(element)
+            .save()
+        }
+    </script>
     <!--Custom Js Script-->
     <script src="assets/js/custom.js"></script>
     <!--Custom Js Script-->

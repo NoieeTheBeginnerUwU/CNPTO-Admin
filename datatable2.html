@@ -231,7 +231,7 @@
                 <h5 class="mb-3" ><strong>Sign In Table</strong></h5>
                 
                 <!--Dashboard widget-->
-                <div class="mt-1 mb-3 button-container">
+                <div id="table" class="mt-1 mb-3 button-container">
                     <div class="row pl-0">
                         
                     <div class="container mt-3">
@@ -245,7 +245,7 @@
 
                             </tbody>
                         </table>
-                        
+                        <button onclick="printTable()">Save as PDF</button>
                     </div>
                     
                 </div>
@@ -312,7 +312,17 @@
         //Nice select
         $('.bulk-actions').niceSelect();
     </script>
-  </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script>
+        function printTable(){
+            const element = document.getElementById('table');
+            html2pdf()
+            .from(element)
+            .save()
+        }
+    </script>
+</body>
 </html>
 
 <script type="module">
