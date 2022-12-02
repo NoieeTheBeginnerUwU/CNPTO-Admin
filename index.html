@@ -116,7 +116,7 @@
                     <!--Image Avatar-->
                     <div class="avatar text-center">
                         <img src="assets/img/OIP.jfif" alt="" class="rounded-circle" />
-                        <p><strong>Joseph S. Marcial</strong></p>
+                        <p><strong id="admin-username">Joseph S. Marcial</strong></p>
                         <span class="text-primary small"><strong>ADMIN</strong></span>
                     </div>
                     <!--Image Avatar-->
@@ -160,10 +160,11 @@
                             </li>
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
-                                    <span class="none">Charts <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                    <span class="none">News and Updates <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="charts">
-                                    <li class="child"><a href="chart.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Chart JS</a></li>
+                                    <li class="child"><a href="news.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> News</a></li>
+                                    <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Updates</a></li>
                                 </ul>
                             </li>
                             <li class="parent">
@@ -547,10 +548,15 @@ const firebaseConfig = {
     const auth = getAuth();
     const database = getDatabase(app);
 
-    submitData.addEventListener('click', (e) => {
-
         var email = document.getElementById('email').value;
         var password = document.getElementById('psw').value;
+        const name = ref(db, 'users/');
+
+        onValue(name,(snapshot)=>{
+            const data = snapshot.val();
+            var user = document.getElementById('admin-username');
+            user.innerHTML = data;
+        })
 
         // log in user
         signInWithEmailAndPassword(auth, email, password)
@@ -588,7 +594,19 @@ const firebaseConfig = {
         }).catch((error) => {
             // An error happened.
         });
-    });
+        const name_ = ref(db, 'users/');
+
+onValue(name_,(snapshot)=>{
+    const data = snapshot.val();
+    changeName(data);
+})
+
+function changeName(data){
+var user = document.getElementById('admin-username');
+user.innerHTML = data;
+}
+
+    
 
 </script>
 

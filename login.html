@@ -151,13 +151,11 @@ const firebaseConfig = {
                 // Signed in
                 const user = userCredential.user;
                 // ...
-                if(!keep){
                   sessionStorage.setItem('email', JSON.stringify(email));
-                }else{
                   localStorage.setItem('keep', 'yes')
                   localStorage.setItem('user', JSON.stringify(email));
                   window.location('user')
-                }
+                
                 // save log in details into real time database
                 var lgDate = new Date();
                 update(ref(database, 'users/' + user.uid), {

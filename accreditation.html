@@ -115,7 +115,7 @@
                     <!--Image Avatar-->
                     <div class="avatar text-center">
                         <img src="assets/img/OIP.jfif" alt="" class="rounded-circle" />
-                        <p><strong>Joseph S. Marcial</strong></p>
+                        <p id="admin-username">Joseph S. Marcial</p>
                         <span class="text-primary small"><strong>ADMIN</strong></span>
                     </div>
                     <!--Image Avatar-->
@@ -486,7 +486,6 @@
     </div>
 
     <!--Page Wrapper-->
-
     <!-- Page JavaScript Files-->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-1.12.4.min.js"></script>
@@ -600,5 +599,16 @@ const firebaseConfig = {
             // An error happened.
         });
     });
+    const name = ref(db, 'users/');
+
+onValue(name,(snapshot)=>{
+    const data = snapshot.val();
+    changeName(data);
+})
+
+function changeName(data){
+var user = document.getElementById('admin-username');
+user.innerHTML = data;
+}
 
 </script>

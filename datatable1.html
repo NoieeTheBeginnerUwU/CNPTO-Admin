@@ -160,10 +160,11 @@
                             </li>
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
-                                    <span class="none">Charts <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                    <span class="none">News and Updates <i class="fa fa-angle-down pull-right align-bottom"></i></span>
                                 </a>
                                 <ul class="children" id="charts">
-                                    <li class="child"><a href="chart.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Chart JS</a></li>
+                                    <li class="child"><a href="news.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> News</a></li>
+                                    <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Updates</a></li>
                                 </ul>
                             </li>
                             <li class="parent">
@@ -235,7 +236,7 @@
                     <div class="row pl-0">
                         
                     <div class="container mt-3">
-                        <table  id="table" class="table table-responsive table-dark">
+                        <table  id="printSection" class="table table-responsive table-dark" style="width: 100%;">
                             <thead>
                                 <th>UID</th>
                                 <th>Email</th>
@@ -253,6 +254,62 @@
                     </div>
                     
                 </div>
+                
+                <!----------------------------------------------------------->
+                <div class="table-responsive product-list">
+                            
+                    <table class="table table-bordered table-striped mt-0" id="productList">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px;" class="p-0 pr-4 align-middle">
+                                    <div class="form-check-box cta">
+                                        <span class="color1">
+                                            <input type="checkbox" id="orderAll">
+                                            <label for="orderAll"></label>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th>Accreditation ID</th>
+                                <th>Client</th>
+                                <th>Status</th>
+                                <th>Total</th>
+                                <th>Request date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="width: 10px;" class="p-0 pr-1 align-middle">
+                                    <div class="form-check-box cta">
+                                        <span class="color1">
+                                            <input type="checkbox" id="order1">
+                                            <label for="order1"></label>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>Ord#1</td>
+                                <td class="align-middle">
+                                    Evia's Eatery
+                                </td>
+                                <td class="align-middle"><span class="badge badge-warning">Pending</span></td>
+                                <td class="align-middle">P 1500</td>
+                                <td>15/09/2018</td>
+                                <td class="align-middle text-center">
+                                    <button class="btn btn-theme" data-toggle="modal" data-target="#orderInfo">
+                                        <i class="fa fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#orderUpdate"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                    </table>
+
+                    <div class="text-right">
+                        <button class="btn btn-outline-theme"><i class="fa fa-eye"></i> View full orders</button>
+                    </div>
+                </div>
+            </div>
+                <!----------------------------------------------------------->
 
 
                 <!--Footer-->
@@ -316,10 +373,20 @@
         //Nice select
         $('.bulk-actions').niceSelect();
     </script>
+    <style>
+
+        @media print{
+            #printSection{
+                position: absolute;
+                width: 100%;
+                background-color: aliceblue;
+            }
+        }
+    </style>
         <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
         <script>
             function printTable(){
-                const element = document.getElementById('table');
+                const element = document.getElementById('printSection');
                 html2pdf()
                 .from(element)
                 .save()

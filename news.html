@@ -7,10 +7,12 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="assets/img/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--Meta Responsive tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="shortcut icon" href="/images/logo.png">
+    <!--Favicon Icon-->
+    <link rel="shortcut icon" href="assets/img/logo.png">
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <!--Custom style.css-->
@@ -23,8 +25,6 @@
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <!--Chartist CSS-->
     <link rel="stylesheet" href="assets/css/chartist.min.css">
-    <!--Morris Css-->
-    <link rel="stylesheet" href="assets/css/morris.css">
     <!--Map-->
     <link rel="stylesheet" href="assets/css/jquery-jvectormap-2.0.2.css">
     <!--Bootstrap Calendar-->
@@ -58,7 +58,7 @@
             <!--Logo-->
             <div class="col-sm-3 pl-0 text-center header-logo">
                <div class="bg-theme mr-3 pt-3 pb-2 mb-0">
-                    <h3 class="logo"><a href="#" class="text-secondary logo"><i class="fa fa-compass"></i> CNPTO<span class="small">admin</span></a></h3>
+                    <h3 class="logo"><a href="#" class="text-secondary logo"><i class="fa fa-compass"></i> CNPTO<span class="small">ADMIN</span></a></h3>
                </div>
             </div>
             <!--Logo-->
@@ -76,6 +76,7 @@
                         <!--Toggle sidebar-->
                         <!--Notification icon-->
                         <!--Notication icon-->
+
                         <!--Inbox icon-->
                         <!--Inbox icon-->
 
@@ -85,7 +86,7 @@
                     <!--Search box and avatar-->
                     <div class="col-sm-8 col-4 text-right flex-header-menu justify-content-end">
                         <div class="search-rounded mr-3">
-                            <input type="text" class="form-control search-box" placeholder="Enter keywords.." />
+                            <input type="text" class="form-control search-box" placeholder="Search here..." />
                         </div>
                         <div class="mr-4">
                             <div class="dropdown-menu dropdown-menu-right mt-13" aria-labelledby="dropdownMenuLink">
@@ -115,7 +116,7 @@
                     <!--Image Avatar-->
                     <div class="avatar text-center">
                         <img src="assets/img/OIP.jfif" alt="" class="rounded-circle" />
-                        <p><strong>Joseph S. Marcial</strong></p>
+                        <p id="name_"><strong>Joseph S. Marcial</strong></p>
                         <span class="text-primary small"><strong>ADMIN</strong></span>
                     </div>
                     <!--Image Avatar-->
@@ -154,19 +155,18 @@
                                     <li class="child"><a href="datatable14.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Tourist Water Transport Table</a></li>  
                                     <li class="child"><a href="datatable15.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Filipino Surfing Instructor Table</a></li>  
                                     <li class="child"><a href="datatable16.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Tour Guide Table</a></li>  
-                                    <li class="child"><a href="datatable17.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Tourism Trainer Table</a></li>                                                             
+                                    <li class="child"><a href="datatable17.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Tourism Trainer Table</a></li>  
                                 </ul>
                             </li>
                             <li class="parent">
-                                <li class="parent">
-                                    <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
-                                        <span class="none">News and Updates <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                    </a>
-                                    <ul class="children" id="charts">
-                                        <li class="child"><a href="news.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> News</a></li>
-                                        <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Updates</a></li>
-                                    </ul>
-                                </li>
+                                <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
+                                    <span class="none">News and Updates <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+                                <ul class="children" id="charts">
+                                    <li class="child"><a href="news.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> News</a></li>
+                                    <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Updates</a></li>
+                                </ul>
+                            </li>
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('maps'); return false" class=""><i class="fa fa-map mr-3"></i>
                                     <span class="none">Maps <i class="fa fa-angle-down pull-right align-bottom"></i></span>
@@ -226,252 +226,57 @@
                 </div>
             </div>
             <!--Sidebar left-->
-
+<style>
+    .cont{
+        background-color: rgba(255, 255, 255, 0.364);
+        width: 100%;
+        height: 80vh;
+    }
+    #fileInp{
+        height: 100px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 40px;
+        margin-top: 2%;
+        background: linear-gradient(45deg,blue,red);
+        cursor: pointer;
+    }
+    #send{
+        color: aliceblue;
+        height: 7vh;
+        background: linear-gradient(45deg,rgb(0, 0, 39),rgb(29, 3, 158));
+        cursor: pointer;
+    }#send p {
+        font-size: 4rem;
+    }input{
+        margin: .5%;
+        height: 7vh;
+    }
+</style>
             <!--Content right-->
             <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
-                <h5 class="mb-3" ><strong>Dashboard</strong></h5>
+                <h5 class="mb-3" ><strong> <i class="fa fa-newspaper" style="color: rgb(18, 219, 18);"></i> Client Side News</strong></h5>
                 
                 <!--Dashboard widget-->
-                <div class="mt-1 mb-3 button-container">
-                    <div class="row pl-0">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <div class="bg-white border shadow">
-                                <div class="p-2 text-center">
-                                    <h5 class="mb-0 mt-2 text-theme"><small><strong>INCOME</strong></small></h5>
-                                    <h1>P 0</h1>
-                                </div>
-                                <div class="align-bottom">
-                                    <span id="incomeBar"></span>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <div class="bg-white border shadow">
-                                <div class="p-2 text-center">
-                                    <h5 class="mb-0 mt-2 text-danger"><small><strong>EXPENSES</strong></small></h5>
-                                    <h1>P 0</h1>
-                                </div>
-                                <div class="align-bottom">
-                                    <span id="expensesBar"></span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="cont" style="display: flex; flex-direction: column;">
+                    <input type="text" name="title" id="title" placeholder="Insert News Header">
+                    <input type="text" name="author" id="author" placeholder="Insert Author Name">
+                    <label for="image" id="fileInp"><i class="fa fa-camera"></i></label><p>upload image</p>
+                    <input type="file" name="image" id="image" onchange="getFile(event)" placeholder="Insert Image">
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Insert Update Description"></textarea>
+                    <input type="submit" id="send">
+                </div>                    
 
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <div class="bg-white border shadow">
-                                <div class="p-2 text-center">
-                                    <h5 class="mb-0 mt-2 text-green"><small><strong>GROSS PROFIT</strong></small></h5>
-                                    <h1>P 0</h1>
-                                </div>
-                                <div class="align-bottom">
-                                    <span id="profitBar"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/Dashboard widget-->
 
-                <div class="row mt-3">
-                    <div class="col-sm-12 col-md-8">
-                        <!--Analytics-->
-                        <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
-                            <h6 class="mb-3">Analytics</h6><hr>
-                            
-                            <canvas id="orderRevenue" class="orderRevenue" height="120px"></canvas>
-                            
-                        </div>
-                        <!--/Analytics-->
-
-                    </div>
-                    
-                    
-                    <div class="col-sm-12 col-md-4">
-                        <!--Custom Sales small chart-->
-                        <div class="mt-1 mb-3 button-container bg-white border shadow-sm lh-sm">
-                            <div class="fb-follow-widget">
-                                <div class="fb-widget-top bg-theme text-white">
-                                    <div class="row p-3 fb-widget-top-desc">
-                                        <div class="col-sm-6 col-6">
-                                            <h5>Sales</h5>
-                                            <small>2016.9.12</small>
-                                        </div>
-                                        <div class="col-sm-6 col-6 text-right">
-                                            <h5><i class="fa fa-caret-up"></i> 260</h5>
-                                            <small>2016.9.12</small>
-                                        </div>
-                                    </div>
-                                    <div class="ct-chart" id="areaChartFb" style="width: 100%; height:100px"></div>
-                                </div>
-                                <div class="fb-widget-bottom">
-                                    <div class="row p-3 fb-widget-bottom">
-                                        <div class="col-sm-6 col-6 fb-wb-inner">
-                                           <p> <small><i class="fa fa-circle text-danger"></i> 32% dietary intake</small></p>
-                                            <p><small><i class="fa fa-circle text-theme"></i> 68% motion capture</small></p>
-                                            <h5>Total : <span class="text-theme">3000</span></h5>
-                                        </div>
-                                        <div class="col-sm-6 col-6 text-right">
-                                            <div id="fbFollowChart" style="height: 130px"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--/Custom Sales small chart-->
-                    </div>
-                </div>
-
-                <!--Custom cards section-->
-                <div class="row">
-                    <!--Visitors statistics card-->
-                    <div class="col-sm-4 custom-card">
-                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
-                            <div class="text-center mb-3">
-                                <h5 class="mb-0 mt-2"><small>Visitors</small></h5>
-                                <h2>0</h2>
-                            </div>
-
-                            <svg viewBox="0 0 36 25" class="circular-chart blue">
-                                <path class="circle-bg"
-                                d="M18 2.0845
-                                    a 7.9567 7.9567 0 0 1 0 15.9134
-                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
-                                />
-                                <path class="circle"
-                                stroke-dasharray="40, 60"
-                                d="M18 2.0845
-                                    a 7.9567 7.9567 0 0 1 0 15.9134
-                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
-                                />
-                                <text x="18" y="12.00" class="percentage">&#xf0c0;</text>
-                            </svg>
-                            <div class="row mx-2">
-                                <div class="col-sm-6 col-12">
-                                    <h5>0</h5>
-                                    <span class="text-muted small"><strong>Male visitors</strong></span>
-                                </div>
-                                <div class="col-sm-6 col-12 text-right">
-                                    <h5>0</h5>
-                                    <span class="text-muted small"><strong>Female visitors</strong></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Visitors statistics card-->
-
-                    <!--Transaction statistics card-->
-                    <div class="col-sm-4 custom-card">
-                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
-                            <div class="text-center mb-3">
-                                <h5 class="mb-0 mt-2"><small>Transactions</small></h5>
-                                <h2>0</h2>
-                            </div>
-                            
-                            <svg viewBox="0 0 36 25" class="circular-chart red">
-                                <path class="circle-bg"
-                                d="M18 2.0845
-                                    a 7.9567 7.9567 0 0 1 0 15.9134
-                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
-                                />
-                                <path class="circle"
-                                stroke-dasharray="40, 60"
-                                d="M18 2.0845
-                                    a 7.9567 7.9567 0 0 1 0 15.9134
-                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
-                                />
-                                <text x="18" y="12.00" class="percentage">&#xf1ed;</text>
-                            </svg>
-
-                            <div class="row mx-2">
-                                <div class="col-sm-6 col-12">
-                                    <h5>0</h5>
-                                    <span class="text-muted small"><strong>Payments done</strong></span>
-                                </div>
-                                <div class="col-sm-6 col-12 text-right">
-                                    <h5>0</h5>
-                                    <span class="text-muted small"><strong>Payments due</strong></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Transaction statistics card-->
-
-                    <!--Tasks statistics card-->
-                    <div class="col-sm-4 custom-card">
-                        <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
-                            <div class="text-center mb-3">
-                                <h5 class="mb-0 mt-2"><small>Tasks</small></h5>
-                                <h2>0</h2>
-                            </div>
-
-                            <svg viewBox="0 0 36 25" class="circular-chart green">
-                                <path class="circle-bg"
-                                d="M18 2.0845
-                                    a 7.9567 7.9567 0 0 1 0 15.9134
-                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
-                                />
-                                <path class="circle"
-                                stroke-dasharray="40, 60"
-                                d="M18 2.0845
-                                    a 7.9567 7.9567 0 0 1 0 15.9134
-                                    a 7.9567 7.9567 0 0 1 0 -15.9134"
-                                />
-                                <text x="18" y="12.00" class="percentage">&#xf0ae;</text>
-                            </svg>
-
-                            <div class="row mx-2">
-                                <div class="col-sm-6 col-12">
-                                    <h5>0</h5>
-                                    <span class="text-muted small"><strong>Completed</strong></span>
-                                </div>
-                                <div class="col-sm-6 col-12 text-right">
-                                    <h5>0</h5>
-                                    <span class="text-muted small"><strong>Pending</strong></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Transaction statistics card-->
-                </div>
-                <!--Custom cards Section-->
-
-                
-
-                <!--Latest projects-->
-                <div class="row mt-3">
-                    <div class="col-sm-12">
-                        <div class="shadow panel-head-primary">
-                            <h5 class="text-center mt-3 mb-3"><strong>Events</strong></h5>
-                            <div class="table-responsive">
-                                <table class="table table-striped" id="project_table">
-                                    <thead>
-                                        <tr>
-                                            <th>Event id</th>
-                                            <th>Event name</th>
-                                            <th>Event date</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>01</td>
-                                            <td>Pabirik Festival</td>
-                                            <td>11 February, 2022</td>
-                                            <td><span class="badge badge-success">Completed</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <!--Footer-->
                 <!--Footer-->
                 <div class="row mt-5 mb-4 footer">
                     <div class="col-sm-8">
-                        <span>&copy; All rights reserved 2022 <a class="text-theme" href="#"></a></span>
+                        <span>&copy; All rights reserved 2022<a class="text-theme" href="#"></a></span>
                     </div>
                     <div class="col-sm-4 text-right">
                         <a href="#" class="ml-2">Contact Us</a>
@@ -505,11 +310,6 @@
     <script src="assets/js/charts/jquery.flot.pie.min.js"></script>
     <script src="assets/js/charts/jquery.flot.categories.min.js"></script>
     <script src="assets/js/charts/jquery.flot.stack.min.js"></script>
-    <!--Sparkline-->
-    <script src="assets/js/charts/sparkline.min.js"></script>
-    <!--Morris.JS-->
-    <script src="assets/js/charts/raphael.min.js"></script>
-    <script src="assets/js/charts/morris.js"></script>
     <!--Chart JS-->
     <script src="assets/js/charts/chart.min.js"></script>
     <!--Chartist JS-->
@@ -528,79 +328,56 @@
 
     <!--Custom Js Script-->
     <script src="assets/js/custom.js"></script>
-  </body>
+    <!--Custom Js Script-->
+    <script>
+        //Nice select
+        $('.bulk-actions').niceSelect();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
+</body>
 </html>
 
 <script type="module">
-    // Import the functions you need from the SDKs you need
+
     import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import {
-        getAuth,
-        createUserWithEmailAndPassword,
-        signInWithEmailAndPassword,
-        signOut
-    } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-    import {getDatabase, set, ref, update} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    import {getAuth} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+    import {getDatabase, set, ref, get, child, onValue} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    import {getStorage, ref as Sref, uploadBytesResumable, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
 
+    const firebaseConfig = {
+    apiKey: "AIzaSyDA1XjvPrrZiMLhYRRV1Ar23p4SF2lJq9I",
+    authDomain: "cpto-d7b0b.firebaseapp.com",
+    databaseURL: "https://cpto-d7b0b-default-rtdb.firebaseio.com",
+    projectId: "cpto-d7b0b",
+    storageBucket: "cpto-d7b0b.appspot.com",
+    messagingSenderId: "633926478402",
+    appId: "1:633926478402:web:3e659a8d5f50793d299bdb",
+    measurementId: "G-WNZKRQGELD"
+    };
 
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDqZlQJ6oK2R9e9RfLXkIXhVhIwflJdWf0",
-  authDomain: "cnpto-admin.firebaseapp.com",
-  projectId: "cnpto-admin",
-  storageBucket: "cnpto-admin.appspot.com",
-  messagingSenderId: "181394975297",
-  appId: "1:181394975297:web:1b2b4c5a96b913a31ab4c0",
-  measurementId: "G-MB52N53WJV"
-};
-    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    const auth = getAuth();
-    const database = getDatabase(app);
+    const db = getDatabase(app);
 
-    submitData.addEventListener('click', (e) => {
-
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('psw').value;
-
-        // log in user
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in
-                const user = userCredential.user;
-                // ...
-
-                // save log in details into real time database
-                var lgDate = new Date();
-                update(ref(database, 'users/' + user.uid), {
-                    email: email,
-                    password: psw,
-                    last_login: lgDate,
-                })
-                    .then(() => {
-                        // Data saved successfully!
-                        alert('user logged in successfully');
-                        window.location.replace('pages/dashboard.html');
-                    })
-                    .catch((error) => {
-                        // The write failed...
-                        alert(error);
-                    });
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(errorMessage);
-            });
+    var btn = document.getElementById('send');
+//_______________________________variable references____________________________________//
 
 
-        signOut(auth).then(() => {
-               // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        });
-    });
+//_______________________________variable references____________________________________//
+
+    btn.addEventListener("click", (e) =>{
+        const title = document.getElementById("title").value;
+        const author = document.getElementById("author").value;
+        var date = new Date();
+        const description = document.getElementById("description").value;
+
+        set(ref(db, 'News/ ' + date), {
+                    title: title,
+                    date: date,
+                    author: author,
+                    description: description
+                }).then(alert("News added successfully."));
+
+    })
 
 </script>
