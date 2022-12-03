@@ -55,9 +55,6 @@ body {
             </div>
             <div class="error error-txt">Password can't be blank</div>
           </div>
-          <div class="input-area" style="display: block;">
-            <input type="checkbox" name="keep" id="keep"><label for="keep" style="color:white;">keep me logged in</label>
-          </div>
           <input type="submit" id="submitData" name="submitData" class="registerbtn"value="Login">
         </form>
       </div>
@@ -143,7 +140,6 @@ const firebaseConfig = {
 
         var email = document.getElementById('email').value;
         var password = document.getElementById('psw').value;
-        var keep = document.getElementById('keep').checked;
 
         // log in user
         signInWithEmailAndPassword(auth, email, password)
@@ -151,10 +147,6 @@ const firebaseConfig = {
                 // Signed in
                 const user = userCredential.user;
                 // ...
-                  sessionStorage.setItem('email', JSON.stringify(email));
-                  localStorage.setItem('keep', 'yes')
-                  localStorage.setItem('user', JSON.stringify(email));
-                  window.location('user')
                 
                 // save log in details into real time database
                 var lgDate = new Date();
@@ -166,6 +158,7 @@ const firebaseConfig = {
                     .then(() => {
                         // Data saved successfully!
                         alert('user logged in successfully');
+                        const current = localStorage.setItem("user", email);
                         window.location.replace('index.html');
                     })
                     .catch((error) => {

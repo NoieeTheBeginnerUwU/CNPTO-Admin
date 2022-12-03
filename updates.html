@@ -355,7 +355,9 @@
 </html>
 
 <script type="module">
-
+    if(localStorage.length< 2){
+        window.location = "login.html";
+    }   
     import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
     import {getAuth} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
     import {getDatabase, set, ref, get, child, onValue} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
