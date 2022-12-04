@@ -48,12 +48,28 @@ body {
 }#submitData:hover{
   background-color: rgb(9, 226, 6);
 }.left{
+  transition: ease-in-out 1s;
   width: 40%;
   height: 100%;
   background-image: url("assets/img/8536300140_3d69c69139_z.webp");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
+}.left:hover{
+  transition: ease-in-out .7s;
+  width: 100%;
+  background-size: cover;
+  transition: ease-out .7s;
 }
+
+@media(max-width: 800px){
+  .left{
+    display: none;
+  }.wrapper{
+    width: 100%;
+  }
+}
+
 </style>
 </head>
 
