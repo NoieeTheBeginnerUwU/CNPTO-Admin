@@ -166,16 +166,6 @@
                                     <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Updates</a></li>
                                 </ul>
                             </li>
-
-                            <li class="parent">
-                                <a href="#" onclick="toggle_menu('services'); return false" class=""><i class="fa fa-wrench mr-3"></i>
-                                    <span class="none">Services <i class="fa fa-angle-down pull-right align-bottom"></i></span>
-                                </a>
-                                <ul class="children" id="services">
-                                    <li class="child"><a href="inquiry.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> TRE Request and Invitation</a></li>
-                                    <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Accreditation</a></li>
-                                </ul>
-                            </li>
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('maps'); return false" class=""><i class="fa fa-map mr-3"></i>
                                     <span class="none">Maps <i class="fa fa-angle-down pull-right align-bottom"></i></span>
@@ -220,6 +210,25 @@
                                 </ul>
                             </li>
                             <li class="parent">
+                                <a href="#" onclick="toggle_menu('charts'); return false" class=""><i class="fa fa-pie-chart mr-3"></i>
+                                    <span class="none">News and Updates <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+                                <ul class="children" id="charts">
+                                    <li class="child"><a href="news.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> News</a></li>
+                                    <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Updates</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('services'); return false" class=""><i class="fa fa-wrench mr-3"></i>
+                                    <span class="none">Services <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+                                <ul class="children" id="services">
+                                    <li class="child"><a href="inquiry.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> TRE Request and Invitation</a></li>
+                                    <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Accreditation</a></li>
+                                </ul>
+                            </li>
+                            <li class="parent">
                                 <a href="fullcalendar.html" class=""><i class="fa fa-calendar-o mr-3"> </i>
                                     <span class="none">Full Calendar </span>
                                 </a>
@@ -235,34 +244,50 @@
                 </div>
             </div>
             <!--Sidebar left-->
-
+<style>
+    .cont{
+        background-color: rgba(255, 255, 255, 0.364);
+        width: 100%;
+        height: 80vh;
+    }
+    #fileInp{
+        height: 100px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 40px;
+        margin-top: 2%;
+        background: linear-gradient(45deg,blue,red);
+        cursor: pointer;
+    }
+    #send{
+        color: aliceblue;
+        height: 7vh;
+        background: linear-gradient(45deg,rgb(0, 0, 39),rgb(29, 3, 158));
+        cursor: pointer;
+    }#send p {
+        font-size: 4rem;
+    }input{
+        margin: .5%;
+        height: 7vh;
+    }
+</style>
             <!--Content right-->
             <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
-                <h5 class="mb-3" ><strong>Filipino Surfing Instructor Table</strong></h5>
+                <h5 class="mb-3" ><strong> <i class="fa fa-newspaper" style="color: rgb(18, 219, 18);"></i> Client Side News</strong></h5>
                 
                 <!--Dashboard widget-->
-                <div class="mt-1 mb-3 button-container">
-                    <div class="row pl-0">
-                        
-                    <div class="container mt-3">
-                        <table class="table table-responsive">
-                            <thead>
-                                <th>UID</th>
-                                <th>Email</th>
-                                <th>Last Name</th>
-                                <th>First Name</th>
-                                <th>Middle Initial</th>
-                                <th>Number</th>
-                                <th>Password</th>
-                            </thead>
-                            <tbody id="tbody1">
 
-                            </tbody>
-                        </table>
-                        
-                    </div>
-                    
-                </div>
+                <div class="cont" style="display: flex; flex-direction: column;">
+                    <input type="text" name="title" id="title" placeholder="Insert News Header">
+                    <input type="text" name="author" id="author" placeholder="Insert Author Name">
+                    <label for="image" id="fileInp"><i class="fa fa-camera"></i></label><p>upload image</p>
+                    <input type="file" name="image" id="image" onchange="getFile(event)" placeholder="Insert Image">
+                    <textarea name="description" id="description" cols="30" rows="10" placeholder="Insert Update Description"></textarea>
+                    <input type="submit" id="send">
+                </div>                    
 
 
                 <!--Footer-->
@@ -318,16 +343,7 @@
     <script src="assets/js/calendar/demo.js"></script>
     <!--Nice select-->
     <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
-    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
-    <script>
-        function printTable(){
-            const element = document.getElementById('table');
-            html2pdf()
-            .from(element)
-            .save()
-        }
-    </script>
+
     <!--Custom Js Script-->
     <script src="assets/js/custom.js"></script>
     <!--Custom Js Script-->
@@ -335,104 +351,57 @@
         //Nice select
         $('.bulk-actions').niceSelect();
     </script>
-  </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
+</body>
 </html>
 
 <script type="module">
     if(localStorage.length< 2){
         window.location = "login.html";
-    }
+    }   
     logout.addEventListener('click', (e) =>{
         localStorage.clear();
         window.location = "index.html";
-    });   
-    // Import the functions you need from the SDKs you need
+    });
     import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
     import {getAuth} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-    import {getDatabase, ref, get, child, onValue} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    import {getDatabase, set, ref, get, child, onValue} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+    import {getStorage, ref as Sref, uploadBytesResumable, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyDA1XjvPrrZiMLhYRRV1Ar23p4SF2lJq9I",
+    authDomain: "cpto-d7b0b.firebaseapp.com",
+    databaseURL: "https://cpto-d7b0b-default-rtdb.firebaseio.com",
+    projectId: "cpto-d7b0b",
+    storageBucket: "cpto-d7b0b.appspot.com",
+    messagingSenderId: "633926478402",
+    appId: "1:633926478402:web:3e659a8d5f50793d299bdb",
+    measurementId: "G-WNZKRQGELD"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    var btn = document.getElementById('send');
+//_______________________________variable references____________________________________//
 
 
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+//_______________________________variable references____________________________________//
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDA1XjvPrrZiMLhYRRV1Ar23p4SF2lJq9I",
-  authDomain: "cpto-d7b0b.firebaseapp.com",
-  databaseURL: "https://cpto-d7b0b-default-rtdb.firebaseio.com",
-  projectId: "cpto-d7b0b",
-  storageBucket: "cpto-d7b0b.appspot.com",
-  messagingSenderId: "633926478402",
-  appId: "1:633926478402:web:3e659a8d5f50793d299bdb",
-  measurementId: "G-WNZKRQGELD"
-};
+    btn.addEventListener("click", (e) =>{
+        const title = document.getElementById("title").value;
+        const author = document.getElementById("author").value;
+        var date = new Date();
+        const description = document.getElementById("description").value;
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase();
+        set(ref(db, 'News/ ' + date), {
+                    title: title,
+                    date: date,
+                    author: author,
+                    description: description
+                }).then(alert("News added successfully."));
 
-function SelectAllData(){
-    const datum = ref(db, 'accounts/');
-    onValue(datum, (snapshot) => {
-    const data = snapshot.val();
-    var content = '';
-    snapshot.forEach(function(data){
-        var val = data.val();
-                var email = data.val().email;
-                var lname = data.val().lname;
-                var fname = data.val().fname;
-                var mi = data.val().mi;
-                var num = data.val().num;
-                var password = data.val().password;
-                AddItemsToTable(email, lname, fname, mi, num, password);
     })
-    });
-
-    const datum2 = ref(db, 'data/');
-    onValue(datum2, (snapshot) => {
-    const data2 = snapshot.val();
-    var content2 = '';
-    snapshot.forEach(function(data2){
-        var val2 = data2.val();
-                var email2 = data2.val().email;
-                var lastlogin2 = data2.val().last_login;
-                AddItemsToTable2(email2, last_login2);
-    })
-    });
-
-}
-
-
-var accNo = 0;
-window.onload = SelectAllData;
- function AddItemsToTable(email, lname, fname, mi, num, password){
-    var tbody = document.getElementById("tbody1");
-    var trow = document.createElement("tr");
-    var td1 = document.createElement("td");
-    var td2 = document.createElement("td");
-    var td3 = document.createElement("td");
-    var td4 = document.createElement("td");
-    var td5 = document.createElement("td");
-    var td6 = document.createElement("td");
-    var td7 = document.createElement("td");
-
-    td1.innerHTML = ++accNo;
-    td2.innerHTML = email;
-    td3.innerHTML = lname;
-    td4.innerHTML = fname;
-    td5.innerHTML = mi;
-    td6.innerHTML = num;
-    td7.innerHTML = password;
-
-    trow.appendChild(td1);
-    trow.appendChild(td2);
-    trow.appendChild(td3);
-    trow.appendChild(td4);
-    trow.appendChild(td5);
-    trow.appendChild(td6);
-    trow.appendChild(td7);
-    tbody.appendChild(trow);
-
- }
 
 </script>
-
-

@@ -89,14 +89,13 @@
                             <input type="text" class="form-control search-box" placeholder="Search here..." />
                         </div>
                         <div class="mr-4">
+                            <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="assets/img/OIP.jfif" alt="Adam" class="rounded-circle" width="40px" height="40px">
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right mt-13" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#"><i class="fa fa-user pr-2"></i> Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-th-list pr-2"></i> Tasks</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-book pr-2"></i> Projects</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off pr-2"></i> Logout</a>
+                                <a class="dropdown-item" id="logout" href="#"><i class="fa fa-power-off pr-2"></i> Logout</a>
                             </div>
                         </div>
                     </div>
@@ -167,6 +166,17 @@
                                     <li class="child"><a href="updates.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Updates</a></li>
                                 </ul>
                             </li>
+
+                            <li class="parent">
+                                <a href="#" onclick="toggle_menu('services'); return false" class=""><i class="fa fa-wrench mr-3"></i>
+                                    <span class="none">Services <i class="fa fa-angle-down pull-right align-bottom"></i></span>
+                                </a>
+                                <ul class="children" id="services">
+                                    <li class="child"><a href="reqenv.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> TRE Request and Invitation</a></li>
+                                    <li class="child"><a href="accreditation.html" class="ml-4"><i class="fa fa-angle-right mr-2"></i> Accreditation</a></li>
+                                </ul>
+                            </li>
+
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('maps'); return false" class=""><i class="fa fa-map mr-3"></i>
                                     <span class="none">Maps <i class="fa fa-angle-down pull-right align-bottom"></i></span>
@@ -389,61 +399,7 @@
                         </div>
                     </div>
                     <!--/Order Listing-->
-                    <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
-                        <h5 class="mb-0" ><strong>Google Maps</strong></h5>
-                        <span class="text-secondary">Maps <i class="fa fa-angle-right"></i> Google maps</span>
-                        
-                        <div class="row mt-3">
-                            <div class="col-sm-6">
-                                <!--Google world-->
-                                <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
-                                    <h6 class="mb-2">Google world map</h6>
-                                    <p class="mb-3">Default sample of google world map</p>
-                                    
-                                    <div id="google_world_map" style="width: 100%; height: 300px"></div>
-                                </div>
-                                <!--/Line Chart-->
-        
-                            </div>
-                            
-                            
-                            <div class="col-sm-6">
-                                <!--Area Chart-->
-                                <div class="mt-1 mb-3 p-3 button-container  bg-white shadow-sm border">
-                                    <h6>Google Europe Map</h6>
-                                    <p class="mb-3">Europe map sample</p>
-                                    
-                                    <div id="google_eu_map" style="width: 100%; height: 300px;"></div>
-                                </div>
-                                <!--/Area Table-->
-                            </div>
-                        </div>
-        
-                        <div class="row mt-3">
-                            <div class="col-sm-6">
-                                <!--Google world-->
-                                <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
-                                    <h6 class="mb-2">Google map with marker</h6>
-                                    <p class="mb-3">Place markers on map locations</p>
-                                    
-                                    <div id="google_ptm_map" style="width: 100%; height: 300px"></div>
-                                </div>
-                                <!--/Line Chart-->
-        
-                            </div>
-                            
-                            
-                            <div class="col-sm-6" style="width: 100%;">
-                                <!--Area Chart-->
-                                <div class="mt-1 mb-3 p-3 button-container  bg-white shadow-sm border" style="width: 100%; height:80vh;">
-                                        <h6 class="mb-2">Google map with marker</h6>
-                                        <p class="mb-3">Place markers on map locations</p>
-                                    
-                                    <div id="google_search_map" style="width: 200%; height: 300px;"></div>
-                                </div>
-                                <!--/Area Table-->
-                            </div>
-                        </div>
+                    
         
                     <!--Order Info Modal-->
                   
@@ -524,6 +480,13 @@
     if(localStorage.length< 2){
         window.location = "login.html";
     }   
+
+    var logout = document.getElementById('logout');
+
+    logout.addEventListener('click', (e) =>{
+        localStorage.clear();
+        window.location = "index.html";
+    });
 
     // Import the functions you need from the SDKs you need
     import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
