@@ -30,35 +30,60 @@ body {
     z-index: 1;
     backdrop-filter: blur(5px);
     
+}.container{
+  width: 60%;
+  height: 73vh;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}.wrapper{
+  float: right;
+  width: 70%;
+  height: 100%;
+  border-radius: 0;
+  background-color: rgba(19, 0, 106, 0.97);
+}#submitData{
+  background-color: rgb(8, 180, 57);
+}#submitData:hover{
+  background-color: rgb(9, 226, 6);
+}.left{
+  width: 40%;
+  height: 100%;
+  background-image: url("assets/img/8536300140_3d69c69139_z.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 </style>
 </head>
 
 <body>
     
+  <div class="container">
+    <div class="left"></div>
     <div class="wrapper">
-        <header>CNPTO Admin Login</header>
-        <form action="index.html">
-          <div class="field email">
-            <div class="input-area">
-              <input type="text" placeholder="Email Address" id="email"><br>
-              <i class="fa fa-user" style="color: rgb(255, 255, 255); left: 20px;"></i>
-              <i class="error error-icon fas fa-exclamation-circle"></i>
-            </div>
-            <div class="error error-txt">Email can't be blank</div>
+      <header> <i class="fa fa-compass">CNPTO Admin Login</i> </header>
+      <form action="index.html">
+        <div class="field email">
+          <div class="input-area">
+            <input type="text" placeholder="Email Address" id="email"><br>
+            <i class="fa fa-user" style="color: rgb(255, 255, 255); left: 20px;"></i>
+            <i class="error error-icon fas fa-exclamation-circle"></i>
           </div>
-          <div class="field password">
-            <div class="input-area">
-              <input type="password" placeholder="Password" id="psw" required>
-              <i class="fa fa-lock" style="color: rgb(255, 255, 255); left: 20px;"></i>
-              <i class="error error-icon fas fa-exclamation-circle"></i>
-            </div>
-            <div class="error error-txt">Password can't be blank</div>
+          <div class="error error-txt">Email can't be blank</div>
+        </div>
+        <div class="field password">
+          <div class="input-area">
+            <input type="password" placeholder="Password" id="psw" required>
+            <i class="fa fa-lock" style="color: rgb(255, 255, 255); left: 20px;"></i>
+            <i class="error error-icon fas fa-exclamation-circle"></i>
           </div>
-          <input type="submit" id="submitData" name="submitData" class="registerbtn"value="Login">
-        </form>
-      </div>
-
+          <div class="error error-txt">Password can't be blank</div>
+        </div>
+        <input type="submit" id="submitData" name="submitData" class="registerbtn"value="Login">
+      </form>
+    </div>
+  </div>
 
 
 </body>
