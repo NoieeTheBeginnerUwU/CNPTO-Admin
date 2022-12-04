@@ -439,7 +439,7 @@ function AddItemsToTable(email, name, purpose,affiliation, message, date){
     var div2 = document.createElement("div");
     div2.style.backgroundColor= 'green';
     div2.style.color = "white";
-    div2.style.width = "70%";
+    div2.style.width = "100%";
     div2.style.height = "40vh"
     div2.style.margin = "auto"
     div2.style.borderRadius = "15px"
@@ -465,12 +465,36 @@ function AddItemsToTable(email, name, purpose,affiliation, message, date){
     btn1.style.height = "40px";
     btn1.style.background = "blue";
     btn1.style.color = "white";
+    btn1.id = "btn1";
+    btn1.addEventListener("click", (e)=>{
+        alert(name+ "'s request has been accepted");
+        var param = {
+            name: name,
+            purpose: purpose,
+            date: date
+        }
+        const serviceID = "service_cq30y1x";
+        const templateID = "template_44br4on";
+        emailjs.send(serviceID, templateID, param).then(alert("Mail Sent Successfully"));
+    });
     
     btn2.style.content = "SEND";
     btn2.style.width = "140px";
     btn2.style.height = "40px";
     btn2.style.background = "red";
     btn2.style.color = "white";
+    btn2.id = "btn2";
+    btn2.addEventListener('click', (e)=>{
+        alert(name+ "'s request has been rejected");
+        var param = {
+            name: name,
+            purpose: purpose,
+            date: date
+        }
+        const serviceID = "service_cq30y1x";
+        const templateID = "template_pc0uz4e";
+        emailjs.send(serviceID, templateID, param).then(alert("Mail Sent Successfully"));
+    });
 
     td1.innerHTML =  "Email: " + email;
     td2.innerHTML = "Name: " + name;
@@ -497,8 +521,8 @@ function AddItemsToTable(email, name, purpose,affiliation, message, date){
 
 //_______________________________Invitations____________________________________//
 
-function SelectAllData(){
-    const datum = ref(db, 'Requests/');
+function SelectAllData2(){
+    const datum = ref(db, 'Invitations/');
     onValue(datum, (snapshot) => {
     const data = snapshot.val();
     var content = '';
@@ -512,19 +536,19 @@ function SelectAllData(){
                 var affiliation = data.val().affiliation;
                 var email = data.val().email;
                 console.log(val)
-                AddItemsToTable(email, name, purpose ,affiliation, message, date);
+                AddItemsToTable2(email, name, purpose ,affiliation, message, date);
    })
     });
 
 }
-SelectAllData();
-function AddItemsToTable(email, name, purpose,affiliation, message, date){
-    var tbody = document.getElementById("container1");
+SelectAllData2();
+function AddItemsToTable2(email, name, purpose,affiliation, message, date){
+    var tbody = document.getElementById("container2");
     var div = document.createElement("div");
     var div2 = document.createElement("div");
     div2.style.backgroundColor= 'green';
     div2.style.color = "white";
-    div2.style.width = "70%";
+    div2.style.width = "100%";
     div2.style.height = "40vh"
     div2.style.margin = "auto"
     div2.style.borderRadius = "15px"
@@ -550,12 +574,36 @@ function AddItemsToTable(email, name, purpose,affiliation, message, date){
     btn1.style.height = "40px";
     btn1.style.background = "blue";
     btn1.style.color = "white";
+    btn1.id = "btn1";
+    btn1.addEventListener("click", (e)=>{
+        alert(name+ "'s invitation has been accepted");
+        var param = {
+            name: name,
+            purpose: purpose,
+            date: date
+        }
+        const serviceID = "service_cq30y1x";
+        const templateID = "template_44br4on";
+        emailjs.send(serviceID, templateID, param).then(alert("Mail Sent Successfully"));
+    });
     
     btn2.style.content = "SEND";
     btn2.style.width = "140px";
     btn2.style.height = "40px";
     btn2.style.background = "red";
     btn2.style.color = "white";
+    btn2.id = "btn2";
+    btn2.addEventListener('click', (e)=>{
+        alert(name+ "'s invitation has been rejected");
+        var param = {
+            name: name,
+            purpose: purpose,
+            date: date
+        }
+        const serviceID = "service_cq30y1x";
+        const templateID = "template_pc0uz4e";
+        emailjs.send(serviceID, templateID, param).then(alert("Mail Sent Successfully"));
+    });
 
     td1.innerHTML =  "Email: " + email;
     td2.innerHTML = "Name: " + name;
@@ -579,5 +627,14 @@ function AddItemsToTable(email, name, purpose,affiliation, message, date){
     tbody.appendChild(div);
 
  }
+ 
 
+</script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("ENRm8kM6T3ExM49jM");
+   })();
 </script>
