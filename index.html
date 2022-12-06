@@ -327,14 +327,14 @@
                                         <i class="fas fa-question"></i>
                                     </div>
                                     <div class="media-body pl-2">
-                                        <h3 class="count2">0</h3>
+                                        <h3 class="count5">0</h3>
                                         <script>
-                                            updateCounter2()
-                                            counterElement2 = document.getElementsByClassName('count2');
-                                            function updateCounter2(){
+                                            updateCounter5()
+                                            counterElement5 = document.getElementsByClassName('count5')[0]
+                                            function updateCounter5(){
                                                 fetch('https://api.countapi.xyz/get/inquire/inq')
                                                 .then(res => res.json())
-                                                .then(res => {counterElement2.innerHTML = res.value})
+                                                .then(res => {counterElement5.innerHTML = res.value})
                                             }
 
                                         </script>
