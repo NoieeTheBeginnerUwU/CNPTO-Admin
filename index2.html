@@ -295,40 +295,7 @@
                     </div>
                     
                     
-                    <div class="col-sm-12 col-md-4">
-                        <!--Custom Sales small chart-->
-                        <div class="mt-1 mb-3 button-container bg-white border shadow-sm lh-sm">
-                            <div class="fb-follow-widget">
-                                <div class="fb-widget-top bg-theme text-white">
-                                    <div class="row p-3 fb-widget-top-desc">
-                                        <div class="col-sm-6 col-6">
-                                            <h5>Sales</h5>
-                                            <small>2016.9.12</small>
-                                        </div>
-                                        <div class="col-sm-6 col-6 text-right">
-                                            <h5><i class="fa fa-caret-up"></i> 260</h5>
-                                            <small>2016.9.12</small>
-                                        </div>
-                                    </div>
-                                    <div class="ct-chart" id="areaChartFb" style="width: 100%; height:100px"></div>
-                                </div>
-                                <div class="fb-widget-bottom">
-                                    <div class="row p-3 fb-widget-bottom">
-                                        <div class="col-sm-6 col-6 fb-wb-inner">
-                                           <p> <small><i class="fa fa-circle text-danger"></i> 32% dietary intake</small></p>
-                                            <p><small><i class="fa fa-circle text-theme"></i> 68% motion capture</small></p>
-                                            <h5>Total : <span class="text-theme">3000</span></h5>
-                                        </div>
-                                        <div class="col-sm-6 col-6 text-right">
-                                            <div id="fbFollowChart" style="height: 130px"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
-                        <!--/Custom Sales small chart-->
-                    </div>
                 </div>
 
                 <!--Custom cards section-->
@@ -338,7 +305,17 @@
                         <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
                             <div class="text-center mb-3">
                                 <h5 class="mb-0 mt-2"><small>Visitors</small></h5>
-                                <h2>0</h2>
+                                <h2 class="count">0</h2>
+                                <script>
+                                    updateCounter()
+                                    counterElement1 = document.getElementsByClassName('count')[0]
+                                    function updateCounter(){
+                                        fetch('https://api.countapi.xyz/get/cpto.com/cpto-online')
+                                        .then(res => res.json())
+                                        .then(res => {counterElement1.innerHTML = res.value})
+                                    }
+
+                                </script>
                             </div>
 
                             <svg viewBox="0 0 36 25" class="circular-chart blue">
@@ -355,16 +332,6 @@
                                 />
                                 <text x="18" y="12.00" class="percentage">&#xf0c0;</text>
                             </svg>
-                            <div class="row mx-2">
-                                <div class="col-sm-6 col-12">
-                                    <h5>0</h5>
-                                    <span class="text-muted small"><strong>Male visitors</strong></span>
-                                </div>
-                                <div class="col-sm-6 col-12 text-right">
-                                    <h5>0</h5>
-                                    <span class="text-muted small"><strong>Female visitors</strong></span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <!--/Visitors statistics card-->
@@ -411,9 +378,18 @@
                         <div class="mt-1 mb-3 button-container p-3 bg-white border shadow lh-sm">
                             <div class="text-center mb-3">
                                 <h5 class="mb-0 mt-2"><small>Tasks</small></h5>
-                                <h2>0</h2>
+                                <h2 class="count3">0</h2>
                             </div>
+                            <script>
+                                updateCounter3()
+                                counterElement3 = document.getElementsByClassName('count3')[0]
+                                function updateCounter3(){
+                                    fetch('https://api.countapi.xyz/get/request/req')
+                                    .then(res => res.json())
+                                    .then(res => {counterElement3.innerHTML = res.value *2})
+                                }
 
+                            </script>
                             <svg viewBox="0 0 36 25" class="circular-chart green">
                                 <path class="circle-bg"
                                 d="M18 2.0845

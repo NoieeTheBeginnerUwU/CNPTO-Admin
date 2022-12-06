@@ -237,23 +237,28 @@
             <!--Sidebar left-->
 
             <!--Content right-->
+           
             <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
-                <h5 class="mb-3" ><strong>Apartment and Hotel Table</strong></h5>
+                <h5 class="mb-3" ><strong>Ambulatory Clinic</strong></h5>
                 
                 <!--Dashboard widget-->
                 <div class="mt-1 mb-3 button-container">
                     <div class="row pl-0">
                         
                     <div class="container mt-3">
-                        <table class="table table-responsive">
+                        <table class="table table-responsive table-dark">
                             <thead>
+                                <th>acc_ID</th>
                                 <th>UID</th>
-                                <th>Email</th>
-                                <th>Last Name</th>
-                                <th>First Name</th>
-                                <th>Middle Initial</th>
-                                <th>Number</th>
-                                <th>Password</th>
+                                <th>User Email</th>
+                                <th>Tin</th>
+                                <th>Name of Clinic</th>
+                                <th>Establishment Name</th>
+                                <th>Business Address</th>
+                                <th>Contact Number</th>
+                                <th>Business Email</th>
+                                <th>Date Established</th>
+                                <th></th>
                             </thead>
                             <tbody id="tbody1">
 
@@ -261,8 +266,132 @@
                         </table>
                         
                     </div>
-                    
+
                 </div>
+
+                <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
+                    <h5 class="mb-3" ><strong>Corporation Details</strong></h5>
+                    
+                    <!--Dashboard widget-->
+                    <div class="mt-1 mb-3 button-container">
+                        <div class="row pl-0">
+                        <div class="container mt-3">
+                            <table class="table  table-dark">
+                                <thead>
+                                    <th>Owner/Corp Name</th>
+                                    <th>Corp Address</th>
+                                    <th>Corp Nationality</th>
+                                    <th>Comp Name</th>
+                                    <th>Comp Address</th>
+                                    <th>Org Type</th>
+                                    <th>Permit Type</th>
+                                    <th>Permit Number</th>
+                                    <th>Valid Until</th>
+                                </thead>
+    
+                                <tbody id="tbody1">
+    
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
+                        <h5 class="mb-3" ><strong>General Manager</strong></h5>
+                        
+                        <!--Dashboard widget-->
+                        <div class="mt-1 mb-3 button-container">
+                            <div class="row pl-0">
+                            <div class="container mt-3">
+                                <table class="table  table-dark">
+                                    <thead>
+                                        <th>Genaral Manager Name</th>
+                                        <th>Contact Number</th>
+                                        <th>Email Address</th>
+                                        <th>Nationality</th>
+                                    </thead>
+        
+                                    <tbody id="tbody1">
+        
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
+                            <h5 class="mb-3" ><strong>Stockholder</strong></h5>
+                            
+                            <!--Dashboard widget-->
+                            <div class="mt-1 mb-3 button-container">
+                                <div class="row pl-0">
+                                <div class="container mt-3">
+                                    <table class="table  table-dark">
+                                        <thead>
+                                            <th>Stockholder</th>
+                                            <th>Stockholder Position</th>
+                                            <th>Stockholder Nationality</th>
+                                            <th>Amount Subscribed</th>
+                                            <th>Amount Paid</th>
+                                        </thead>
+            
+                                        <tbody id="tbody1">
+            
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
+                                <h5 class="mb-3" ><strong>Specific Details</strong></h5>
+                                
+                                <!--Dashboard widget-->
+                                <div class="mt-1 mb-3 button-container">
+                                    <div class="row pl-0">
+                                    <div class="container mt-3">
+                                        <table class="table  table-dark">
+                                            <thead>
+                                                <th>Annual Foreign Patients</th>
+                                                <th>Annual Local Patients</th>
+                                                <th>Services Offered</th>
+                                            </thead>
+                
+                                            <tbody id="tbody1">
+                
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
+                                    <h5 class="mb-3" ><strong>Authorized Representative(To transact with DOT)</strong></h5>
+                                    
+                                    <!--Dashboard widget-->
+                                    <div class="mt-1 mb-3 button-container">
+                                        <div class="row pl-0">
+                                        <div class="container mt-3">
+                                            <table class="table  table-dark">
+                                                <thead>
+                                                    <th>Representative's Full Name</th>
+                                                    <th>Designation</th>
+                                                    <th>Contact Number</th>
+                                                    <th>Email Address</th>
+                                                </thead>
+                    
+                                                <tbody id="tbody1">
+                    
+                                                </tbody>
+                                            </table>
+                                            
+                                        </div>
+                                        
+                                    </div>
+
 
 
                 <!--Footer-->
@@ -349,92 +478,7 @@
         window.location = "index.html";
     });
 
-    // Import the functions you need from the SDKs you need
-    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import {getAuth} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-    import {getDatabase, ref, get, child, onValue} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
-
-
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDA1XjvPrrZiMLhYRRV1Ar23p4SF2lJq9I",
-  authDomain: "cpto-d7b0b.firebaseapp.com",
-  databaseURL: "https://cpto-d7b0b-default-rtdb.firebaseio.com",
-  projectId: "cpto-d7b0b",
-  storageBucket: "cpto-d7b0b.appspot.com",
-  messagingSenderId: "633926478402",
-  appId: "1:633926478402:web:3e659a8d5f50793d299bdb",
-  measurementId: "G-WNZKRQGELD"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase();
-
-function SelectAllData(){
-    const datum = ref(db, 'accounts/');
-    onValue(datum, (snapshot) => {
-    const data = snapshot.val();
-    var content = '';
-    snapshot.forEach(function(data){
-        var val = data.val();
-                var email = data.val().email;
-                var lname = data.val().lname;
-                var fname = data.val().fname;
-                var mi = data.val().mi;
-                var num = data.val().num;
-                var password = data.val().password;
-                AddItemsToTable(email, lname, fname, mi, num, password);
-    })
-    });
-
-    const datum2 = ref(db, 'data/');
-    onValue(datum2, (snapshot) => {
-    const data2 = snapshot.val();
-    var content2 = '';
-    snapshot.forEach(function(data2){
-        var val2 = data2.val();
-                var email2 = data2.val().email;
-                var lastlogin2 = data2.val().last_login;
-                AddItemsToTable2(email2, last_login2);
-    })
-    });
-
-}
-
-
-var accNo = 0;
-window.onload = SelectAllData;
- function AddItemsToTable(email, lname, fname, mi, num, password){
-    var tbody = document.getElementById("tbody1");
-    var trow = document.createElement("tr");
-    var td1 = document.createElement("td");
-    var td2 = document.createElement("td");
-    var td3 = document.createElement("td");
-    var td4 = document.createElement("td");
-    var td5 = document.createElement("td");
-    var td6 = document.createElement("td");
-    var td7 = document.createElement("td");
-
-    td1.innerHTML = ++accNo;
-    td2.innerHTML = email;
-    td3.innerHTML = lname;
-    td4.innerHTML = fname;
-    td5.innerHTML = mi;
-    td6.innerHTML = num;
-    td7.innerHTML = password;
-
-    trow.appendChild(td1);
-    trow.appendChild(td2);
-    trow.appendChild(td3);
-    trow.appendChild(td4);
-    trow.appendChild(td5);
-    trow.appendChild(td6);
-    trow.appendChild(td7);
-    tbody.appendChild(trow);
-
- }
+ 
 
 </script>
 

@@ -5,33 +5,7 @@ $(document).ready( function(){
 
 	theDays = ["S", "M", "T", "W", "T", "F", "S"];
     events = [
-      [
-        "4/"+month+"/"+year, 
-        'Meet a friend', 
-        '#', 
-        '#177bbb', 
-        'Contents here'
-      ],
-      [
-        "7/"+month+"/"+year, 
-        'Kick off meeting!', 
-        '#', 
-        '#1bbacc', 
-        'Have a kick off meeting with .inc company'
-      ],
-      [
-        "17/"+month+"/"+year, 
-        'Milestone release', 
-        '#', 
-        '#fcc633', 
-        'Contents here'
-      ],
-      [
-        "19/"+month+"/"+year, 
-        'A link', 
-        'http://www.google.com', 
-        '#e33244'
-      ]
+      
     ];
     $('#calendar').calendar({
         months: theMonths,
