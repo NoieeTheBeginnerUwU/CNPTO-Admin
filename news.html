@@ -391,8 +391,8 @@
         const title = document.getElementById("title").value;
         const author = document.getElementById("author").value;
         var date = new Date();
-        var month = date.getMonth();
-        var day = date.getDay();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
         var year = date.getFullYear();
         const time = date.toLocaleString("en-US", {
         hour: "numeric",
@@ -403,7 +403,7 @@
 
         set(ref(db, 'News/ ' + date), {
                     title: "Headline: " + title,
-                    date: "Date: " + month + "/ " + "/ " + day+ "/ " + year + time,
+                    date: "Date: " + month+ "/ " + day+ "/ " + year +" "+ time,
                     author: "Author: " + author,
                     description: "Content: " + description
                 }).then(alert("News added successfully."));
